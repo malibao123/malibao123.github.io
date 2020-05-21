@@ -468,8 +468,11 @@
 <hr>
 <h3 id="发展历程"><a href="#发展历程" class="headerlink" title="发展历程"></a>发展历程</h3><p>本地版本控制 —-&gt; 集中化的版本控制 ——-&gt;分布式版本控制</p>
 <p>1.本地版本控制 : 单一开发者记录本地文件历次更新差异的记录管理  ;  缺点：不同开发者不能对同一文件协作开发困难</p>
+<p><img src="/2018/05/21/git-ji-chu-shi-yong/5.png" alt></p>
 <p>2.集中化的版本控制 : 不同开发者对单一服务器进行更新差异的管理； 缺点 : 服务器的单一，一旦出现故障，可能会出现重大数据丢失。</p>
+<p><img src="/2018/05/21/git-ji-chu-shi-yong/5-1590041175026.png" alt></p>
 <p>3.分布式版本控制 : 不同开发者在本地对单一服务器进行镜像克隆，每一次的克隆操作，实际上都是一次对代码仓库的完整备份。</p>
+<p><img src="/2018/05/21/git-ji-chu-shi-yong/7-1590041417816.png" alt></p>
 <h3 id="Git-工作区、暂存区和版本库"><a href="#Git-工作区、暂存区和版本库" class="headerlink" title="Git 工作区、暂存区和版本库"></a>Git 工作区、暂存区和版本库</h3><ul>
 <li><strong>工作区：</strong>就是你在电脑里能看到的目录。</li>
 <li><strong>暂存区：</strong>英文叫stage, 或index。一般存放在 “.git目录下” 下的index文件（.git/index）中，所以我们把暂存区有时也叫作索引（index）。</li>
@@ -477,7 +480,9 @@
 </ul>
 <p>下面这个图展示了工作区、版本库中的暂存区和版本库之间的关系：</p>
 <p><img src="https://www.runoob.com/wp-content/uploads/2015/02/1352126739_7909.jpg" alt="img"></p>
-<p><img src="/2018/05/21/git-ji-chu-shi-yong/3.png" alt="2"></p>
+<hr>
+<p><img src="/2018/05/21/git-ji-chu-shi-yong/4.png" alt></p>
+<p><img src="/2018/05/21/git-ji-chu-shi-yong/3.png" alt></p>
 <p>例如： 图一，这个是我从GitHub上git clone 到本地的一个仓库。 .git 文件夹即版本库，红色框 即工作区；打开 .git 文件夹，如图二，有一个index文件夹即暂存区；</p>
 <hr>
 <h2 id="二-、Git-分布式版本控制系统"><a href="#二-、Git-分布式版本控制系统" class="headerlink" title="二 、Git 分布式版本控制系统"></a>二 、Git 分布式版本控制系统</h2><h3 id="1-Git-工作流程"><a href="#1-Git-工作流程" class="headerlink" title="1 . Git 工作流程"></a>1 . Git 工作流程</h3><ol>
@@ -497,6 +502,7 @@
 <p><strong>对已有项目进行初始化仓库，进行版本控制：</strong></p>
 <p>​            如果你有 一个本地项目，想进行版本控制，首先进入项目的根目录，鼠标右击 git bash Hear，执行以下命令 ; 这会在根目录生成一个 <strong>.git</strong> 文件夹</p>
 <pre class=" language-bash"><code class="language-bash">$ <span class="token function">git</span> init</code></pre>
+<p><img src="/2018/05/21/git-ji-chu-shi-yong/8.png" alt></p>
 <p>如图一，这个项目文件夹中存在3个模块，如data1，data2，data3，你本人对data1进行修改，则可以使用add命令，把data1 放入暂存区，在进行commit 之前，对data1 的所有操作，都会被记录下来。</p>
 <pre class=" language-bash"><code class="language-bash">$ <span class="token function">git</span> add data1    <span class="token comment" spellcheck="true">## 把data1 放入暂存区</span>
 $ <span class="token function">git</span> add *        <span class="token comment" spellcheck="true">## 把所有文件,即data1,data2,data3 全部放入暂存区</span>
