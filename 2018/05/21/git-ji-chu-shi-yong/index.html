@@ -468,11 +468,8 @@
 <hr>
 <h3 id="发展历程"><a href="#发展历程" class="headerlink" title="发展历程"></a>发展历程</h3><p>本地版本控制 —-&gt; 集中化的版本控制 ——-&gt;分布式版本控制</p>
 <p>1.本地版本控制 : 单一开发者记录本地文件历次更新差异的记录管理  ;  缺点：不同开发者不能对同一文件协作开发困难</p>
-<p><img src="./Git-%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8/5.png" alt="img"></p>
 <p>2.集中化的版本控制 : 不同开发者对单一服务器进行更新差异的管理； 缺点 : 服务器的单一，一旦出现故障，可能会出现重大数据丢失。</p>
-<p><img src="https://www.runoob.com/wp-content/uploads/2015/02/20200520000246367.png" alt="image-20200520000246367"></p>
 <p>3.分布式版本控制 : 不同开发者在本地对单一服务器进行镜像克隆，每一次的克隆操作，实际上都是一次对代码仓库的完整备份。</p>
-<p><img src="Git-%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8/image-20200520000304122.png" alt="image-20200520000304122"></p>
 <h3 id="Git-工作区、暂存区和版本库"><a href="#Git-工作区、暂存区和版本库" class="headerlink" title="Git 工作区、暂存区和版本库"></a>Git 工作区、暂存区和版本库</h3><ul>
 <li><strong>工作区：</strong>就是你在电脑里能看到的目录。</li>
 <li><strong>暂存区：</strong>英文叫stage, 或index。一般存放在 “.git目录下” 下的index文件（.git/index）中，所以我们把暂存区有时也叫作索引（index）。</li>
@@ -502,14 +499,12 @@
 <p><strong>对已有项目进行初始化仓库，进行版本控制：</strong></p>
 <p>​            如果你有 一个本地项目，想进行版本控制，首先进入项目的根目录，鼠标右击 git bash Hear，执行以下命令 ; 这会在根目录生成一个 <strong>.git</strong> 文件夹</p>
 <pre class=" language-bash"><code class="language-bash">$ <span class="token function">git</span> init</code></pre>
-<p><img src="Git-%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8/OIA51C(X2)Y@UPLG%5D4H_%7D41-1589987972624.png" alt="img"></p>
 <p>如图一，这个项目文件夹中存在3个模块，如data1，data2，data3，你本人对data1进行修改，则可以使用add命令，把data1 放入暂存区，在进行commit 之前，对data1 的所有操作，都会被记录下来。</p>
 <pre class=" language-bash"><code class="language-bash">$ <span class="token function">git</span> add data1    <span class="token comment" spellcheck="true">## 把data1 放入暂存区</span>
 $ <span class="token function">git</span> add *        <span class="token comment" spellcheck="true">## 把所有文件,即data1,data2,data3 全部放入暂存区</span>
 $ <span class="token function">git</span> add data4/   <span class="token comment" spellcheck="true">## 把data4文件夹所有文件放入暂存区</span></code></pre>
 <hr>
 <h5 id="从其它服务器-克隆-一个已存在的-Git-仓库"><a href="#从其它服务器-克隆-一个已存在的-Git-仓库" class="headerlink" title="从其它服务器 克隆 一个已存在的 Git 仓库"></a><strong>从其它服务器 克隆 一个已存在的 Git 仓库</strong></h5><p>如果你想获得一份已经存在了的 Git 仓库的拷贝，比如说，你想为某个开源项目贡献自己的一份力，这时就要用到 <code>git clone</code> 命令。如图 我想要得到下图仓库的本地副本，</p>
-<p>![1 (2)](Git-基础使用/1 (2).png)</p>
 <pre class=" language-bash"><code class="language-bash">$ <span class="token function">git</span> clone https://github.com/malibao123/spider.git  <span class="token comment" spellcheck="true">## 使用htts 协议</span>
 $ <span class="token function">git</span> git@github.com:malibao123/spider.git            <span class="token comment" spellcheck="true">## 使用git 协议</span></code></pre>
 <h3 id="3-2-记录每次更新到仓库"><a href="#3-2-记录每次更新到仓库" class="headerlink" title="3.2 记录每次更新到仓库"></a>3.2 记录每次更新到仓库</h3><p>3.2.1 文件分为两种状态，<strong>以追踪 *<em>和 *</em>未追踪</strong>；对以追踪的文件所有修改操作都会记录在版本库中，可以随时查看。</p>
