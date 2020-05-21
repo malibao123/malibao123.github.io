@@ -1,0 +1,1478 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="Git-基础使用, ^_^马.理.宝">
+    <meta name="description" content="个人心得">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>Git-基础使用 | ^_^马.理.宝</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 4.2.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <span class="logo-span">^_^马.理.宝</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <div class="logo-name">^_^马.理.宝</div>
+        <div class="logo-desc">
+            
+            个人心得
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/malibao123" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/malibao123" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">Git-基础使用</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Git%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/">
+                                <span class="chip bg-color">Git工具使用</span>
+                            </a>
+                        
+                            <a href="/tags/Github%E5%B7%A5%E5%85%B7/">
+                                <span class="chip bg-color">Github工具</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2018-05-21
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    5.1k
+                </div>
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="一-、版本控制系统的发展"><a href="#一-、版本控制系统的发展" class="headerlink" title="一 、版本控制系统的发展"></a>一 、版本控制系统的发展</h2><h3 id="背景："><a href="#背景：" class="headerlink" title="背景："></a>背景：</h3><p>什么是“版本控制”？我为什么要关心它呢？ 版本控制是一种记录一个或若干文件内容变化，以便将来查阅特定版本修订情况的系统。</p>
+<p>如果你是位图形或网页设计师，可能会需要保存某一幅图片或页面布局文件的所有修订版本（这或许是你非常渴望拥有的功能），采用版本控制系统（VCS）是个明智的选择。 有了它你就可以将选定的文件回溯到之前的状态，甚至将整个项目都回退到过去某个时间点的状态，你可以比较文件的变化细节，查出最后是谁修改了哪个地方，从而找出导致怪异问题出现的原因，又是谁在何时报告了某个功能缺陷等等。 使用版本控制系统通常还意味着，就算你乱来一气把整个项目中的文件改的改删的删，你也照样可以轻松恢复到原先的样子。 但额外增加的工作量却微乎其微。</p>
+<hr>
+<h3 id="发展历程"><a href="#发展历程" class="headerlink" title="发展历程"></a>发展历程</h3><p>本地版本控制 —-&gt; 集中化的版本控制 ——-&gt;分布式版本控制</p>
+<p>1.本地版本控制 : 单一开发者记录本地文件历次更新差异的记录管理  ;  缺点：不同开发者不能对同一文件协作开发困难</p>
+<p><img src="Git-%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8/image-20200520000213028.png" alt="image-20200520000213028"></p>
+<p>2.集中化的版本控制 : 不同开发者对单一服务器进行更新差异的管理； 缺点 : 服务器的单一，一旦出现故障，可能会出现重大数据丢失。</p>
+<p><img src="Git-%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8/image-20200520000246367.png" alt="image-20200520000246367"></p>
+<p>3.分布式版本控制 : 不同开发者在本地对单一服务器进行镜像克隆，每一次的克隆操作，实际上都是一次对代码仓库的完整备份。</p>
+<p>![image-20200520000304122](I:/学习笔记/Redis学习笔记/Git 工具的使用/image-20200520000304122.png)</p>
+<h3 id="Git-工作区、暂存区和版本库"><a href="#Git-工作区、暂存区和版本库" class="headerlink" title="Git 工作区、暂存区和版本库"></a>Git 工作区、暂存区和版本库</h3><ul>
+<li><strong>工作区：</strong>就是你在电脑里能看到的目录。</li>
+<li><strong>暂存区：</strong>英文叫stage, 或index。一般存放在 “.git目录下” 下的index文件（.git/index）中，所以我们把暂存区有时也叫作索引（index）。</li>
+<li><strong>版本库：</strong>工作区有一个隐藏目录.git，这个不算工作区，而是Git的版本库。</li>
+</ul>
+<p>下面这个图展示了工作区、版本库中的暂存区和版本库之间的关系：</p>
+<p><img src="https://www.runoob.com/wp-content/uploads/2015/02/1352126739_7909.jpg" alt="img"></p>
+<hr>
+<p><img src="Git-%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8/1.png" alt="1"></p>
+<h2 id="图一"><a href="#图一" class="headerlink" title="图一"></a><span style="color:red">图一</span></h2><p><img src="Git-%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8/2.png" alt="2"></p>
+<h2 id="图二"><a href="#图二" class="headerlink" title="图二"></a><span style="color:red">图二</span></h2><p>例如： 图一，这个是我从GitHub上git clone 到本地的一个仓库。 .git 文件夹即版本库，红色框 即工作区；打开 .git 文件夹，如图二，有一个index文件夹即暂存区；</p>
+<hr>
+<h2 id="二-、Git-分布式版本控制系统"><a href="#二-、Git-分布式版本控制系统" class="headerlink" title="二 、Git 分布式版本控制系统"></a>二 、Git 分布式版本控制系统</h2><h3 id="1-Git-工作流程"><a href="#1-Git-工作流程" class="headerlink" title="1 . Git 工作流程"></a>1 . Git 工作流程</h3><ol>
+<li>克隆 Git 资源作为工作目录。</li>
+<li>在克隆的资源上添加或修改文件。</li>
+<li>如果其他人修改了，你可以更新资源。</li>
+<li>在提交前查看修改。</li>
+<li>提交修改。</li>
+<li>在修改完成后，如果发现错误，可以撤回提交并再次修改并提交。</li>
+</ol>
+<p>下图展示了 Git 的工作流程：</p>
+<p><img src="https://www.runoob.com/wp-content/uploads/2015/02/git-process.png" alt="img"></p>
+<h2 id="三-，git-基础"><a href="#三-，git-基础" class="headerlink" title="三 ，git 基础"></a>三 ，git 基础</h2><h4 id="3-1-获取Git-仓库"><a href="#3-1-获取Git-仓库" class="headerlink" title="3.1 获取Git 仓库"></a>3.1 获取Git 仓库</h4><p>通常有两种获取 Git 项目仓库的方式：</p>
+<p>​            <span style="color:green">1 . 将尚未进行版本控制的本地目录转换为 Git 仓库；</span></p>
+<p>​            <span style="color:green">2 . 从其它服务器 克隆 一个已存在的 Git 仓库。</span></p>
+<hr>
+<p><strong>对已有项目进行初始化仓库，进行版本控制：</strong></p>
+<p>​            如果你有 一个本地项目，想进行版本控制，首先进入项目的根目录，鼠标右击 git bash Hear，执行以下命令 ; 这会在根目录生成一个 <strong>.git</strong> 文件夹</p>
+<pre class=" language-bash"><code class="language-bash">$ <span class="token function">git</span> init</code></pre>
+<p><img src="Git-%E5%9F%BA%E7%A1%80%E4%BD%BF%E7%94%A8/OIA51C(X2)Y@UPLG%5D4H_%7D41-1589987972624.png" alt="img"></p>
+<h4 id="图一-1"><a href="#图一-1" class="headerlink" title="图一"></a>图一</h4><p>如图一，这个项目文件夹中存在3个模块，如data1，data2，data3，你本人对data1进行修改，则可以使用add命令，把data1 放入暂存区，在进行commit 之前，对data1 的所有操作，都会被记录下来。</p>
+<pre class=" language-bash"><code class="language-bash">$ <span class="token function">git</span> add data1    <span class="token comment" spellcheck="true">## 把data1 放入暂存区</span>
+$ <span class="token function">git</span> add *        <span class="token comment" spellcheck="true">## 把所有文件,即data1,data2,data3 全部放入暂存区</span>
+$ <span class="token function">git</span> add data4/   <span class="token comment" spellcheck="true">## 把data4文件夹所有文件放入暂存区</span></code></pre>
+<hr>
+<h5 id="从其它服务器-克隆-一个已存在的-Git-仓库"><a href="#从其它服务器-克隆-一个已存在的-Git-仓库" class="headerlink" title="从其它服务器 克隆 一个已存在的 Git 仓库"></a><strong>从其它服务器 克隆 一个已存在的 Git 仓库</strong></h5><p>如果你想获得一份已经存在了的 Git 仓库的拷贝，比如说，你想为某个开源项目贡献自己的一份力，这时就要用到 <code>git clone</code> 命令。如图 我想要得到下图仓库的本地副本，</p>
+<p>![1 (Git 工具的使用/1 (2)-1589988917685.png)](C:/Users/art/Desktop/1 (2).png)</p>
+<pre class=" language-bash"><code class="language-bash">$ <span class="token function">git</span> clone https://github.com/malibao123/spider.git  <span class="token comment" spellcheck="true">## 使用htts 协议</span>
+$ <span class="token function">git</span> git@github.com:malibao123/spider.git            <span class="token comment" spellcheck="true">## 使用git 协议</span></code></pre>
+<h4 id="3-2-记录每次更新到仓库"><a href="#3-2-记录每次更新到仓库" class="headerlink" title="3.2 记录每次更新到仓库"></a>3.2 记录每次更新到仓库</h4><p>3.2.1 文件分为两种状态，<strong>以追踪 *<em>和 *</em>未追踪</strong>；对以追踪的文件所有修改操作都会记录在版本库中，可以随时查看。</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> status <span class="token comment" spellcheck="true">## 检查文件状态</span>
+
+<span class="token function">git</span> status -s  <span class="token comment" spellcheck="true">## 或者 git status --short 得到一种格式更为紧凑的输出</span>
+<span class="token comment" spellcheck="true">## 如下面例子</span>
+<span class="token comment" spellcheck="true"># 新添加的未跟踪文件前面有 ?? 标记，</span>
+<span class="token comment" spellcheck="true"># 新添加到暂存区中的文件前面有 A 标记，修改过的文件前面有 M 标记。 </span>
+<span class="token comment" spellcheck="true"># 输出中有两栏，左栏指明了暂存区的状态，右栏指明了工作区的状态。</span>
+
+<span class="token comment" spellcheck="true"># 例如，下面的状态报告显示： README 文件在工作区已修改但尚未暂存，而 lib/simplegit.rb 文件已修改且已暂存。 Rakefile 文件已修，暂存后又作了修改，因此该文件的修改中# 既有已暂存的部分，又有未暂存的部分。</span>
+
+$ <span class="token function">git</span> status -s
+ M README
+MM Rakefile
+A  lib/git.rb
+M  lib/simplegit.rb
+?? LICENSE.txt</code></pre>
+<p>3.2.2 追踪新文件； 当追踪文件被修改后,需要再次使用add命令，把文件的最新修改版 放入暂存区</p>
+<pre class=" language-bash"><code class="language-bash">$ <span class="token function">git</span> add data1    <span class="token comment" spellcheck="true">## 把data1 放入暂存区</span>
+$ <span class="token function">git</span> add *        <span class="token comment" spellcheck="true">## 把所有文件,即data1,data2,data3 全部放入暂存区</span>
+$ <span class="token function">git</span> add data4/   <span class="token comment" spellcheck="true">## 把data4文件夹所有文件放入暂存区     </span></code></pre>
+<p>3.2.3 忽略文件</p>
+<p>一般我们总会有些文件无需纳入 Git 的管理，也不希望它们总出现在未跟踪文件列表。 通常都是些自动生成的文件，比如日志文件，或者编译过程中创建的临时文件等。 在这种情况下，我们可以创建一个名为 <code>.gitignore</code> 的文件，列出要忽略的文件的模式。 来看一个实际的 <code>.gitignore</code> 例子：</p>
+<pre class=" language-bash"><code class="language-bash">$ <span class="token function">cat</span> .gitignore
+*.<span class="token punctuation">[</span>oa<span class="token punctuation">]</span> <span class="token comment" spellcheck="true">#忽略所有以 .a 或者 .o 结尾的文件。</span>
+*~     <span class="token comment" spellcheck="true">#忽略所有以 ~结尾的文件</span></code></pre>
+<p>3.2.4 查看<strong>尚未暂存</strong>的文件更新了哪些部分，如没有显示 则表示没有进行修改</p>
+<pre class=" language-bash"><code class="language-bash">$ <span class="token function">git</span> <span class="token function">diff</span></code></pre>
+<p>3.2.5 比对<strong>已暂存文件</strong>与<strong>最后一次提交</strong>的文件差异</p>
+<pre class=" language-bash"><code class="language-bash">$ <span class="token function">git</span> <span class="token function">diff</span> --staged</code></pre>
+<p>3.2.6 提交更新</p>
+<pre class=" language-bash"><code class="language-bash">$ <span class="token function">git</span> commit -m 提交信息  <span class="token comment" spellcheck="true">#自定义提交信息，比如 first commit  或者second commit</span></code></pre>
+<p>3.2.7 移除文件</p>
+<pre class=" language-bash"><code class="language-bash">$ <span class="token function">git</span> <span class="token function">rm</span> -f <span class="token operator">&lt;</span>filename<span class="token operator">></span>  <span class="token comment" spellcheck="true"># 删除文件</span>
+$ <span class="token function">git</span> <span class="token function">rm</span> --cached <span class="token operator">&lt;</span>filename<span class="token operator">></span>  <span class="token comment" spellcheck="true"># 把文件以 追踪状态 变为 未追踪状态(即从暂存区删除)</span></code></pre>
+<h3 id="3-3-查看提交历史"><a href="#3-3-查看提交历史" class="headerlink" title="3.3 查看提交历史"></a>3.3 查看提交历史</h3><pre class=" language-bash"><code class="language-bash">$ <span class="token function">git</span> log  <span class="token comment" spellcheck="true">#会按时间先后顺序列出所有的提交，最近的更新排在最上面</span>
+$ <span class="token function">git</span> log -p <span class="token comment" spellcheck="true"># 会显示每次提交所引入的差异（按 补丁 的格式输出）</span>
+$ <span class="token function">git</span> log -p -2 <span class="token comment" spellcheck="true"># -2 选项来只显示最近的两次提交</span></code></pre>
+<h3 id="3-4撤消操作"><a href="#3-4撤消操作" class="headerlink" title="3.4撤消操作"></a>3.4撤消操作</h3><p>3.4.1 文件补交</p>
+<pre class=" language-bash"><code class="language-bash">$ <span class="token function">git</span> commit -m <span class="token string">'initial commit'</span>  
+$ <span class="token function">git</span> add forgotten_file
+$ <span class="token function">git</span> commit --amend
+<span class="token comment" spellcheck="true">#当你提交完数据后发现 forgotten_file 这个文件忘了提交，使用git commit --amend 进行补交</span>
+<span class="token comment" spellcheck="true"># 注意 ： 当你在修补最后的提交时，并不是通过用改进后的提交 原位替换 掉旧有提交的方式来修复的， 理解这一点非常重# 要。从效果上来说，就像是旧有的提交从未存在过一样，它并不会出现在仓库的历史中。</span></code></pre>
+<p>3.4.2 取消暂存的文件</p>
+<p>当暂存区有两个 a，b 文件，但是现在只想提交 a文件，不想提交b文件；可以把b文件从暂存区撤销掉</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> reset HEAD <span class="token operator">&lt;</span>filename<span class="token operator">></span>
+<span class="token comment" spellcheck="true">#例子：</span>
+    <span class="token function">git</span> reset HEAD b</code></pre>
+<p>3.4.3 撤消对文件的修改 (恢复到最近一次开始追踪的状态)</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> checkout -- <span class="token operator">&lt;</span>filename<span class="token operator">></span></code></pre>
+<h3 id="3-5-远程仓库的使用"><a href="#3-5-远程仓库的使用" class="headerlink" title="3.5 远程仓库的使用"></a>3.5 远程仓库的使用</h3><p>3.5.1 查看远程仓库</p>
+<pre class=" language-bash"><code class="language-bash">$ <span class="token function">git</span> remote <span class="token comment" spellcheck="true"># 列出你指定的每一个远程服务器的简写.如果你已经克隆了自己的仓库，那么至少应该能看到 origin ——这                #    是 Git 给你克隆的仓库服务器的默认名字</span>
+$ <span class="token function">git</span> remote -v <span class="token comment" spellcheck="true">#显示需要读写远程仓库使用的 Git 保存的简写与其对应的 URL</span></code></pre>
+<p>3.5.2 添加远程仓库</p>
+<pre class=" language-bash"><code class="language-bash">$ <span class="token function">git</span> remote add <span class="token operator">&lt;</span>shortname<span class="token operator">></span> <span class="token operator">&lt;</span>url<span class="token operator">></span> <span class="token comment" spellcheck="true"># shortname 自定义简称 来代替url</span></code></pre>
+<p>3.5.3 从远程仓库中抓取与拉取</p>
+<pre class=" language-bash"><code class="language-bash">$ <span class="token function">git</span> fetch <span class="token operator">&lt;</span>remote<span class="token operator">></span> <span class="token comment" spellcheck="true">#只会将数据下载到你的本地仓库——它并不会自动合并或修改你当前的工作。</span>
+<span class="token comment" spellcheck="true">#如果你的当前分支设置了跟踪远程分支，那么可以用 git pull 命令来自动抓取后合并该远程分支到当前分支。</span></code></pre>
+<p>3.5.4 推送到远程仓库</p>
+<pre class=" language-bash"><code class="language-bash">$ <span class="token function">git</span> push origin master
+<span class="token comment" spellcheck="true">#只有当你有所克隆服务器的写入权限，并且之前没有人推送过时，这条命令才能生效。 当你和其他人在同一时间克隆，他们</span>
+<span class="token comment" spellcheck="true">#先推送到上游然后你再推送到上游，你的推送就会毫无疑问地被拒绝。 你必须先抓取他们的工作 git pull 并将其合并进你的工作后才能推送。</span></code></pre>
+<p>3.5.5 查看某个远程仓库</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">## 一 、版本控制系统的发展</span>
+
+<span class="token comment" spellcheck="true">### 背景：</span>
+
+什么是“版本控制”？我为什么要关心它呢？ 版本控制是一种记录一个或若干文件内容变化，以便将来查阅特定版本修订情况的系统。
+
+如果你是位图形或网页设计师，可能会需要保存某一幅图片或页面布局文件的所有修订版本（这或许是你非常渴望拥有的功能），采用版本控制系统（VCS）是个明智的选择。 有了它你就可以将选定的文件回溯到之前的状态，甚至将整个项目都回退到过去某个时间点的状态，你可以比较文件的变化细节，查出最后是谁修改了哪个地方，从而找出导致怪异问题出现的原因，又是谁在何时报告了某个功能缺陷等等。 使用版本控制系统通常还意味着，就算你乱来一气把整个项目中的文件改的改删的删，你也照样可以轻松恢复到原先的样子。 但额外增加的工作量却微乎其微。
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+<span class="token comment" spellcheck="true">### 发展历程</span>
+
+本地版本控制 ----<span class="token operator">></span> 集中化的版本控制 -------<span class="token operator">></span>分布式版本控制
+
+1.本地版本控制 <span class="token keyword">:</span> 单一开发者记录本地文件历次更新差异的记录管理  <span class="token punctuation">;</span>  缺点：不同开发者不能对同一文件协作开发困难
+
+<span class="token operator">!</span><span class="token punctuation">[</span>image-20200520000213028<span class="token punctuation">]</span><span class="token punctuation">(</span>Git 工具的使用/image-20200520000213028.png<span class="token punctuation">)</span>
+
+2.集中化的版本控制 <span class="token keyword">:</span> 不同开发者对单一服务器进行更新差异的管理； 缺点 <span class="token keyword">:</span> 服务器的单一，一旦出现故障，可能会出现重大数据丢失。
+
+<span class="token operator">!</span><span class="token punctuation">[</span>image-20200520000246367<span class="token punctuation">]</span><span class="token punctuation">(</span>Git 工具的使用/image-20200520000246367.png<span class="token punctuation">)</span>
+
+3.分布式版本控制 <span class="token keyword">:</span> 不同开发者在本地对单一服务器进行镜像克隆，每一次的克隆操作，实际上都是一次对代码仓库的完整备份。
+
+<span class="token operator">!</span><span class="token punctuation">[</span>image-20200520000304122<span class="token punctuation">]</span><span class="token punctuation">(</span>Git 工具的使用/image-20200520000304122.png<span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">### Git 工作区、暂存区和版本库</span>
+
+- **工作区：**就是你在电脑里能看到的目录。
+- **暂存区：**英文叫stage, 或index。一般存放在 <span class="token string">".git目录下"</span> 下的index文件（.git/index）中，所以我们把暂存区有时也叫作索引（index）。
+- **版本库：**工作区有一个隐藏目录.git，这个不算工作区，而是Git的版本库。
+
+下面这个图展示了工作区、版本库中的暂存区和版本库之间的关系：
+
+<span class="token operator">!</span><span class="token punctuation">[</span>img<span class="token punctuation">]</span><span class="token punctuation">(</span>https://www.runoob.com/wp-content/uploads/2015/02/1352126739_7909.jpg<span class="token punctuation">)</span>
+
+------
+
+<span class="token operator">!</span><span class="token punctuation">[</span>1<span class="token punctuation">]</span><span class="token punctuation">(</span>Git 工具的使用/1.png<span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">##                                                                                         &lt;span style="color:red">图一&lt;/span></span>
+
+<span class="token operator">!</span><span class="token punctuation">[</span>2<span class="token punctuation">]</span><span class="token punctuation">(</span>Git 工具的使用/2.png<span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">##                                                                                         &lt;span style="color:red">图二&lt;/span></span>
+
+例如： 图一，这个是我从GitHub上git clone 到本地的一个仓库。 .git 文件夹即版本库，红色框 即工作区；打开 .git 文件夹，如图二，有一个index文件夹即暂存区；
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+<span class="token comment" spellcheck="true">## 二 、Git 分布式版本控制系统</span>
+
+<span class="token comment" spellcheck="true">### 1 . Git 工作流程</span>
+
+1. 克隆 Git 资源作为工作目录。
+2. 在克隆的资源上添加或修改文件。
+3. 如果其他人修改了，你可以更新资源。
+4. 在提交前查看修改。
+5. 提交修改。
+6. 在修改完成后，如果发现错误，可以撤回提交并再次修改并提交。
+
+下图展示了 Git 的工作流程：
+
+<span class="token operator">!</span><span class="token punctuation">[</span>img<span class="token punctuation">]</span><span class="token punctuation">(</span>https://www.runoob.com/wp-content/uploads/2015/02/git-process.png<span class="token punctuation">)</span>
+
+
+
+<span class="token comment" spellcheck="true">## 三 ，git 基础</span>
+
+<span class="token comment" spellcheck="true">#### 3.1 获取Git 仓库</span>
+
+通常有两种获取 Git 项目仓库的方式：
+
+​            <span class="token operator">&lt;</span>span style<span class="token operator">=</span><span class="token string">"color:green"</span><span class="token operator">></span>1 <span class="token keyword">.</span> 将尚未进行版本控制的本地目录转换为 Git 仓库；<span class="token operator">&lt;</span>/span<span class="token operator">></span>
+
+​            <span class="token operator">&lt;</span>span style<span class="token operator">=</span><span class="token string">"color:green"</span><span class="token operator">></span>2 <span class="token keyword">.</span> 从其它服务器 克隆 一个已存在的 Git 仓库。<span class="token operator">&lt;</span>/span<span class="token operator">></span>
+
+------
+
+**对已有项目进行初始化仓库，进行版本控制：**
+
+​            如果你有 一个本地项目，想进行版本控制，首先进入项目的根目录，鼠标右击 <span class="token function">git</span> <span class="token function">bash</span> Hear，执行以下命令 <span class="token punctuation">;</span> 这会在根目录生成一个 **.git** 文件夹
+
+​``<span class="token variable"><span class="token variable">`</span><span class="token function">bash</span>
+$ <span class="token function">git</span> init
+​<span class="token variable">`</span></span>``
+
+<span class="token operator">!</span><span class="token punctuation">[</span>img<span class="token punctuation">]</span><span class="token punctuation">(</span>Git 工具的使用/OIA51C<span class="token punctuation">(</span>X2<span class="token punctuation">)</span>Y@UPLG<span class="token punctuation">]</span>4H_<span class="token punctuation">}</span>41-1589987972624.png<span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">####                                                                                                                     图一</span>
+
+如图一，这个项目文件夹中存在3个模块，如data1，data2，data3，你本人对data1进行修改，则可以使用add命令，把data1 放入暂存区，在进行commit 之前，对data1 的所有操作，都会被记录下来。
+
+​```bash
+$ <span class="token function">git</span> add data1    <span class="token comment" spellcheck="true">## 把data1 放入暂存区</span>
+$ <span class="token function">git</span> add *        <span class="token comment" spellcheck="true">## 把所有文件,即data1,data2,data3 全部放入暂存区</span>
+$ <span class="token function">git</span> add data4/   <span class="token comment" spellcheck="true">## 把data4文件夹所有文件放入暂存区</span>
+​```
+
+------
+
+<span class="token comment" spellcheck="true">##### **从其它服务器 克隆 一个已存在的 Git 仓库**</span>
+
+如果你想获得一份已经存在了的 Git 仓库的拷贝，比如说，你想为某个开源项目贡献自己的一份力，这时就要用到 <span class="token variable"><span class="token variable">`</span><span class="token function">git</span> clone<span class="token variable">`</span></span> 命令。如图 我想要得到下图仓库的本地副本，
+
+<span class="token operator">!</span><span class="token punctuation">[</span>1 <span class="token punctuation">(</span>Git 工具的使用/1 <span class="token punctuation">(</span>2<span class="token punctuation">)</span>-1589988917685.png<span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">(</span>C:/Users/art/Desktop/1 <span class="token punctuation">(</span>2<span class="token punctuation">)</span>.png<span class="token punctuation">)</span>
+
+
+
+​```bash
+$ <span class="token function">git</span> clone https://github.com/malibao123/spider.git  <span class="token comment" spellcheck="true">## 使用htts 协议</span>
+$ <span class="token function">git</span> git@github.com:malibao123/spider.git            <span class="token comment" spellcheck="true">## 使用git 协议</span>
+​```
+
+<span class="token comment" spellcheck="true">#### 3.2 记录每次更新到仓库</span>
+
+3.2.1 文件分为两种状态，**以追踪 **和 **未追踪**；对以追踪的文件所有修改操作都会记录在版本库中，可以随时查看。
+
+​```bash
+<span class="token function">git</span> status <span class="token comment" spellcheck="true">## 检查文件状态</span>
+
+<span class="token function">git</span> status -s  <span class="token comment" spellcheck="true">## 或者 git status --short 得到一种格式更为紧凑的输出</span>
+<span class="token comment" spellcheck="true">## 如下面例子</span>
+<span class="token comment" spellcheck="true"># 新添加的未跟踪文件前面有 ?? 标记，</span>
+<span class="token comment" spellcheck="true"># 新添加到暂存区中的文件前面有 A 标记，修改过的文件前面有 M 标记。 </span>
+<span class="token comment" spellcheck="true"># 输出中有两栏，左栏指明了暂存区的状态，右栏指明了工作区的状态。</span>
+
+<span class="token comment" spellcheck="true"># 例如，下面的状态报告显示： README 文件在工作区已修改但尚未暂存，而 lib/simplegit.rb 文件已修改且已暂存。 Rakefile 文件已修，暂存后又作了修改，因此该文件的修改中# 既有已暂存的部分，又有未暂存的部分。</span>
+
+$ <span class="token function">git</span> status -s
+ M README
+MM Rakefile
+A  lib/git.rb
+M  lib/simplegit.rb
+?? LICENSE.txt
+​``<span class="token variable"><span class="token variable">`</span>
+
+3.2.2 追踪新文件； 当追踪文件被修改后,需要再次使用add命令，把文件的最新修改版 放入暂存区
+
+​<span class="token variable">`</span></span>``bash
+$ <span class="token function">git</span> add data1    <span class="token comment" spellcheck="true">## 把data1 放入暂存区</span>
+$ <span class="token function">git</span> add *        <span class="token comment" spellcheck="true">## 把所有文件,即data1,data2,data3 全部放入暂存区</span>
+$ <span class="token function">git</span> add data4/   <span class="token comment" spellcheck="true">## 把data4文件夹所有文件放入暂存区     </span>
+​``<span class="token variable"><span class="token variable">`</span>
+
+3.2.3 忽略文件
+
+一般我们总会有些文件无需纳入 Git 的管理，也不希望它们总出现在未跟踪文件列表。 通常都是些自动生成的文件，比如日志文件，或者编译过程中创建的临时文件等。 在这种情况下，我们可以创建一个名为 <span class="token variable">`</span></span>.gitignore<span class="token variable"><span class="token variable">`</span> 的文件，列出要忽略的文件的模式。 来看一个实际的 <span class="token variable">`</span></span>.gitignore<span class="token variable"><span class="token variable">`</span> 例子：
+
+​<span class="token variable">`</span></span>``bash
+$ <span class="token function">cat</span> .gitignore
+*.<span class="token punctuation">[</span>oa<span class="token punctuation">]</span> <span class="token comment" spellcheck="true">#忽略所有以 .a 或者 .o 结尾的文件。</span>
+*~     <span class="token comment" spellcheck="true">#忽略所有以 ~结尾的文件</span>
+​``<span class="token variable"><span class="token variable">`</span>
+
+3.2.4 查看**尚未暂存**的文件更新了哪些部分，如没有显示 则表示没有进行修改
+
+​<span class="token variable">`</span></span>`<span class="token variable"><span class="token variable">`</span><span class="token function">bash</span>
+$ <span class="token function">git</span> <span class="token function">diff</span>
+​<span class="token variable">`</span></span>`<span class="token variable"><span class="token variable">`</span>
+
+3.2.5 比对**已暂存文件**与**最后一次提交**的文件差异
+
+​<span class="token variable">`</span></span>`<span class="token variable"><span class="token variable">`</span><span class="token function">bash</span>
+$ <span class="token function">git</span> <span class="token function">diff</span> --staged
+​<span class="token variable">`</span></span>`<span class="token variable"><span class="token variable">`</span>
+
+3.2.6 提交更新
+
+​<span class="token variable">`</span></span>``bash
+$ <span class="token function">git</span> commit -m 提交信息  <span class="token comment" spellcheck="true">#自定义提交信息，比如 first commit  或者second commit</span>
+​``<span class="token variable"><span class="token variable">`</span>
+
+3.2.7 移除文件
+
+​<span class="token variable">`</span></span>``bash
+$ <span class="token function">git</span> <span class="token function">rm</span> -f <span class="token operator">&lt;</span>filename<span class="token operator">></span>  <span class="token comment" spellcheck="true"># 删除文件</span>
+$ <span class="token function">git</span> <span class="token function">rm</span> --cached <span class="token operator">&lt;</span>filename<span class="token operator">></span>  <span class="token comment" spellcheck="true"># 把文件以 追踪状态 变为 未追踪状态(即从暂存区删除)</span>
+​```
+
+<span class="token comment" spellcheck="true">### 3.3 查看提交历史</span>
+
+​```bash
+$ <span class="token function">git</span> log  <span class="token comment" spellcheck="true">#会按时间先后顺序列出所有的提交，最近的更新排在最上面</span>
+$ <span class="token function">git</span> log -p <span class="token comment" spellcheck="true"># 会显示每次提交所引入的差异（按 补丁 的格式输出）</span>
+$ <span class="token function">git</span> log -p -2 <span class="token comment" spellcheck="true"># -2 选项来只显示最近的两次提交</span>
+​```
+
+<span class="token comment" spellcheck="true">### 3.4撤消操作</span>
+
+3.4.1 文件补交
+
+​```bash
+$ <span class="token function">git</span> commit -m <span class="token string">'initial commit'</span>  
+$ <span class="token function">git</span> add forgotten_file
+$ <span class="token function">git</span> commit --amend
+<span class="token comment" spellcheck="true">#当你提交完数据后发现 forgotten_file 这个文件忘了提交，使用git commit --amend 进行补交</span>
+<span class="token comment" spellcheck="true"># 注意 ： 当你在修补最后的提交时，并不是通过用改进后的提交 原位替换 掉旧有提交的方式来修复的， 理解这一点非常重# 要。从效果上来说，就像是旧有的提交从未存在过一样，它并不会出现在仓库的历史中。</span>
+​``<span class="token variable"><span class="token variable">`</span>
+
+3.4.2 取消暂存的文件
+
+当暂存区有两个 a，b 文件，但是现在只想提交 a文件，不想提交b文件；可以把b文件从暂存区撤销掉
+
+​<span class="token variable">`</span></span>``bash
+<span class="token function">git</span> reset HEAD <span class="token operator">&lt;</span>filename<span class="token operator">></span>
+<span class="token comment" spellcheck="true">#例子：</span>
+    <span class="token function">git</span> reset HEAD b
+​``<span class="token variable"><span class="token variable">`</span>
+
+3.4.3 撤消对文件的修改 <span class="token punctuation">(</span>恢复到最近一次开始追踪的状态<span class="token punctuation">)</span>
+
+​<span class="token variable">`</span></span>`<span class="token variable"><span class="token variable">`</span><span class="token function">bash</span>
+<span class="token function">git</span> checkout -- <span class="token operator">&lt;</span>filename<span class="token operator">></span>
+​<span class="token variable">`</span></span>``
+
+<span class="token comment" spellcheck="true">### 3.5 远程仓库的使用</span>
+
+3.5.1 查看远程仓库
+
+​```bash
+$ <span class="token function">git</span> remote <span class="token comment" spellcheck="true"># 列出你指定的每一个远程服务器的简写.如果你已经克隆了自己的仓库，那么至少应该能看到 origin ——这                #    是 Git 给你克隆的仓库服务器的默认名字</span>
+$ <span class="token function">git</span> remote -v <span class="token comment" spellcheck="true">#显示需要读写远程仓库使用的 Git 保存的简写与其对应的 URL</span>
+​``<span class="token variable"><span class="token variable">`</span>
+
+3.5.2 添加远程仓库
+
+​<span class="token variable">`</span></span>``bash
+$ <span class="token function">git</span> remote add <span class="token operator">&lt;</span>shortname<span class="token operator">></span> <span class="token operator">&lt;</span>url<span class="token operator">></span> <span class="token comment" spellcheck="true"># shortname 自定义简称 来代替url</span>
+​``<span class="token variable"><span class="token variable">`</span>
+
+3.5.3 从远程仓库中抓取与拉取
+
+​<span class="token variable">`</span></span>``bash
+$ <span class="token function">git</span> fetch <span class="token operator">&lt;</span>remote<span class="token operator">></span> <span class="token comment" spellcheck="true">#只会将数据下载到你的本地仓库——它并不会自动合并或修改你当前的工作。</span>
+<span class="token comment" spellcheck="true">#如果你的当前分支设置了跟踪远程分支，那么可以用 git pull 命令来自动抓取后合并该远程分支到当前分支。</span>
+​``<span class="token variable"><span class="token variable">`</span>
+
+3.5.4 推送到远程仓库
+
+​<span class="token variable">`</span></span>``bash
+$ <span class="token function">git</span> push origin master
+<span class="token comment" spellcheck="true">#只有当你有所克隆服务器的写入权限，并且之前没有人推送过时，这条命令才能生效。 当你和其他人在同一时间克隆，他们</span>
+<span class="token comment" spellcheck="true">#先推送到上游然后你再推送到上游，你的推送就会毫无疑问地被拒绝。 你必须先抓取他们的工作 git pull 并将其合并进你的工作后才能推送。</span>
+​``<span class="token variable"><span class="token variable">`</span>
+
+3.5.5 查看某个远程仓库
+
+​<span class="token variable">`</span></span>``bash
+$ <span class="token function">git</span> remote show  <span class="token comment" spellcheck="true"># 查看所有远程仓库</span>
+$ <span class="token function">git</span> remote show <span class="token operator">&lt;</span>remote<span class="token operator">></span> <span class="token comment" spellcheck="true"># 列出该远程仓库的 URL 与跟踪分支的信息</span>
+​```$ <span class="token function">git</span> remote show  <span class="token comment" spellcheck="true"># 查看所有远程仓库</span>
+$ <span class="token function">git</span> remote show <span class="token operator">&lt;</span>remote<span class="token operator">></span> <span class="token comment" spellcheck="true"># 列出该远程仓库的 URL 与跟踪分支的信息</span></code></pre>
+
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">马理宝</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="landsoul.com.cn/2018/05/21/git-ji-chu-shi-yong/">landsoul.com.cn/2018/05/21/git-ji-chu-shi-yong/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">马理宝</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/Git%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/">
+                                    <span class="chip bg-color">Git工具使用</span>
+                                </a>
+                            
+                                <a href="/tags/Github%E5%B7%A5%E5%85%B7/">
+                                    <span class="chip bg-color">Github工具</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2020/05/19/hello-world/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        
+                        <span class="card-title">Hello World</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-05-19
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            马理宝
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                本篇&nbsp;<i class="far fa-dot-circle"></i>
+            </div>
+            <div class="card">
+                <a href="/2018/05/21/git-ji-chu-shi-yong/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="Git-基础使用">
+                        
+                        <span class="card-title">Git-基础使用</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            一 、版本控制系统的发展背景：什么是“版本控制”？我为什么要关心它呢？ 版本控制是一种记录一个或若干文件内容变化，以便将来查阅特定版本修订情况的系统。
+如果你是位图形或网页设计师，可能会需要保存某一幅图片或页面布局文件的所有修订版本（这或许
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2018-05-21
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            马理宝
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Git%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/">
+                        <span class="chip bg-color">Git工具使用</span>
+                    </a>
+                    
+                    <a href="/tags/Github%E5%B7%A5%E5%85%B7/">
+                        <span class="chip bg-color">Github工具</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">2018</span>
+            <a href="/about" target="_blank">马理宝</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">5.2k</span>&nbsp;字
+            
+            
+            
+            
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link ">
+    <a href="https://github.com/malibao123" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1789320357" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1789320357" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/search.xml", 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+
+    
+
+    
+
+    
+    <script type="text/javascript" color="100,0,100"
+        pointColor="0,0,100" opacity='0.7'
+        zIndex="-1" count="99"
+        src="/libs/background/canvas-nest.js"></script>
+    
+
+    
+
+    
+    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
