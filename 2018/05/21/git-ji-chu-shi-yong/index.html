@@ -470,9 +470,9 @@
 <p>1.本地版本控制 : 单一开发者记录本地文件历次更新差异的记录管理  ;  缺点：不同开发者不能对同一文件协作开发困难</p>
 <p><img src="/2018/05/21/git-ji-chu-shi-yong/5.png" alt></p>
 <p>2.集中化的版本控制 : 不同开发者对单一服务器进行更新差异的管理； 缺点 : 服务器的单一，一旦出现故障，可能会出现重大数据丢失。</p>
-<p><img src="/2018/05/21/git-ji-chu-shi-yong/5-1590041175026.png" alt></p>
+<p><img src="/2018/05/21/git-ji-chu-shi-yong/6.png" alt></p>
 <p>3.分布式版本控制 : 不同开发者在本地对单一服务器进行镜像克隆，每一次的克隆操作，实际上都是一次对代码仓库的完整备份。</p>
-<p><img src="/2018/05/21/git-ji-chu-shi-yong/7-1590041417816.png" alt></p>
+<p><img src="/2018/05/21/git-ji-chu-shi-yong/7.png" alt></p>
 <h3 id="Git-工作区、暂存区和版本库"><a href="#Git-工作区、暂存区和版本库" class="headerlink" title="Git 工作区、暂存区和版本库"></a>Git 工作区、暂存区和版本库</h3><ul>
 <li><strong>工作区：</strong>就是你在电脑里能看到的目录。</li>
 <li><strong>暂存区：</strong>英文叫stage, 或index。一般存放在 “.git目录下” 下的index文件（.git/index）中，所以我们把暂存区有时也叫作索引（index）。</li>
@@ -503,7 +503,7 @@
 <p>​            如果你有 一个本地项目，想进行版本控制，首先进入项目的根目录，鼠标右击 git bash Hear，执行以下命令 ; 这会在根目录生成一个 <strong>.git</strong> 文件夹</p>
 <pre class=" language-bash"><code class="language-bash">$ <span class="token function">git</span> init</code></pre>
 <p><img src="/2018/05/21/git-ji-chu-shi-yong/8.png" alt></p>
-<p>如图一，这个项目文件夹中存在3个模块，如data1，data2，data3，你本人对data1进行修改，则可以使用add命令，把data1 放入暂存区，在进行commit 之前，对data1 的所有操作，都会被记录下来。</p>
+<p>如上图，这个项目文件夹中存在3个模块，如data1，data2，data3，你本人对data1进行修改，则可以使用add命令，把data1 放入暂存区，在进行commit 之前，对data1 的所有操作，都会被记录下来。</p>
 <pre class=" language-bash"><code class="language-bash">$ <span class="token function">git</span> add data1    <span class="token comment" spellcheck="true">## 把data1 放入暂存区</span>
 $ <span class="token function">git</span> add *        <span class="token comment" spellcheck="true">## 把所有文件,即data1,data2,data3 全部放入暂存区</span>
 $ <span class="token function">git</span> add data4/   <span class="token comment" spellcheck="true">## 把data4文件夹所有文件放入暂存区</span></code></pre>
