@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Git-基础使用, ^_^马.理.宝">
+    <meta name="keywords" content="Python爬虫-requests库(一), ^_^马.理.宝">
     <meta name="description" content="个人心得">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Git-基础使用 | ^_^马.理.宝</title>
+    <title>Python爬虫-requests库(一) | ^_^马.理.宝</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -304,12 +304,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Git-基础使用</h1>
+                    <h1 class="description center-align post-title">Python爬虫-requests库(一)</h1>
                 </div>
             </div>
         </div>
@@ -426,8 +426,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Git%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/">
-                                <span class="chip bg-color">Git工具使用</span>
+                            <a href="/tags/%E7%88%AC%E8%99%AB-requests/">
+                                <span class="chip bg-color">爬虫 requests</span>
                             </a>
                         
                     </div>
@@ -442,7 +442,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2018-05-21
+                    2019-06-06
                 </div>
                 
 
@@ -451,7 +451,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.5k
+                    1.1k
                 </div>
                 
 
@@ -463,122 +463,141 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="一-、版本控制系统的发展"><a href="#一-、版本控制系统的发展" class="headerlink" title="一 、版本控制系统的发展"></a>一 、版本控制系统的发展</h2><h3 id="背景："><a href="#背景：" class="headerlink" title="背景："></a>背景：</h3><p>什么是“版本控制”？我为什么要关心它呢？ 版本控制是一种记录一个或若干文件内容变化，以便将来查阅特定版本修订情况的系统。</p>
-<p>如果你是位图形或网页设计师，可能会需要保存某一幅图片或页面布局文件的所有修订版本（这或许是你非常渴望拥有的功能），采用版本控制系统（VCS）是个明智的选择。 有了它你就可以将选定的文件回溯到之前的状态，甚至将整个项目都回退到过去某个时间点的状态，你可以比较文件的变化细节，查出最后是谁修改了哪个地方，从而找出导致怪异问题出现的原因，又是谁在何时报告了某个功能缺陷等等。 使用版本控制系统通常还意味着，就算你乱来一气把整个项目中的文件改的改删的删，你也照样可以轻松恢复到原先的样子。 但额外增加的工作量却微乎其微。</p>
-<hr>
-<h3 id="发展历程"><a href="#发展历程" class="headerlink" title="发展历程"></a>发展历程</h3><p>本地版本控制 —-&gt; 集中化的版本控制 ——-&gt;分布式版本控制</p>
-<p>1.本地版本控制 : 单一开发者记录本地文件历次更新差异的记录管理  ;  缺点：不同开发者不能对同一文件协作开发困难</p>
-<p><img src="/2018/05/21/git-ji-chu-shi-yong/5.png" alt></p>
-<p>2.集中化的版本控制 : 不同开发者对单一服务器进行更新差异的管理； 缺点 : 服务器的单一，一旦出现故障，可能会出现重大数据丢失。</p>
-<p><img src="/2018/05/21/git-ji-chu-shi-yong/6.png" alt></p>
-<p>3.分布式版本控制 : 不同开发者在本地对单一服务器进行镜像克隆，每一次的克隆操作，实际上都是一次对代码仓库的完整备份。</p>
-<p><img src="/2018/05/21/git-ji-chu-shi-yong/7.png" alt></p>
-<h3 id="Git-工作区、暂存区和版本库"><a href="#Git-工作区、暂存区和版本库" class="headerlink" title="Git 工作区、暂存区和版本库"></a>Git 工作区、暂存区和版本库</h3><ul>
-<li><strong>工作区：</strong>就是你在电脑里能看到的目录。</li>
-<li><strong>暂存区：</strong>英文叫stage, 或index。一般存放在 “.git目录下” 下的index文件（.git/index）中，所以我们把暂存区有时也叫作索引（index）。</li>
-<li><strong>版本库：</strong>工作区有一个隐藏目录.git，这个不算工作区，而是Git的版本库。</li>
+                <h2 id="Python爬虫-一"><a href="#Python爬虫-一" class="headerlink" title="Python爬虫(一)"></a>Python爬虫(一)</h2><h3 id="一-HTTP、Request-基本知识"><a href="#一-HTTP、Request-基本知识" class="headerlink" title="一. HTTP、Request 基本知识"></a>一. HTTP、Request 基本知识</h3><h4 id="1-Resspnse对象的基本属性"><a href="#1-Resspnse对象的基本属性" class="headerlink" title="1.Resspnse对象的基本属性"></a>1.Resspnse对象的基本属性</h4><pre class=" language-python"><code class="language-python">response <span class="token operator">=</span> Request<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+<p>Respose对象的属性</p>
+<table>
+<thead>
+<tr>
+<th align="center">属性</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">response.status_code</td>
+<td align="left">HTTP 请求状态 200表示成功，其他表示失败</td>
+</tr>
+<tr>
+<td align="center">response.text</td>
+<td align="left">HTTP 响应内容的字符串形式，url对应的页面内容</td>
+</tr>
+<tr>
+<td align="center">response.encoding</td>
+<td align="left">从HTTP header中猜测的响应内容的编码方式</td>
+</tr>
+<tr>
+<td align="center">response.apparent_encoding</td>
+<td align="left">从内容的中分析出的响应内容的编码方式</td>
+</tr>
+<tr>
+<td align="center">r.content</td>
+<td align="left">HTTP响应内容的二进制形式</td>
+</tr>
+<tr>
+<td align="center">r.JSON()</td>
+<td align="left">响应内容的json格式，如果返回结果不是json格式报错</td>
+</tr>
+</tbody></table>
+<p>response.encoding: 如果header中不存在charset ，则默认为编码为 ISO-8859-1</p>
+<p>response.apparent_encoding: 根据网页内容分析出编码方式</p>
+<h4 id="2-Request库的异常"><a href="#2-Request库的异常" class="headerlink" title="2.Request库的异常"></a>2.Request库的异常</h4><p><img src="/2019/06/06/python-pa-chong-requests-ku-yi/image-20200530231634939.png" alt="image-20200530231634939"></p>
+<p><img src="/2019/06/06/python-pa-chong-requests-ku-yi/image-20200530231725675.png" alt="image-20200530231725675"></p>
+<h4 id="3-Requests主要方法"><a href="#3-Requests主要方法" class="headerlink" title="3.Requests主要方法"></a>3.Requests主要方法</h4><p><img src="/2019/06/06/python-pa-chong-requests-ku-yi/image-20200531062509704.png" alt="image-20200531062509704"></p>
+<p>HTTP：超文本传输协议。</p>
+<ul>
+<li><p>基于 “请求与响应” 模式的、无状态的应用层协议</p>
+</li>
+<li><p>一般采用URL作为网络资源的定位标识</p>
+</li>
+<li><p><img src="/2019/06/06/python-pa-chong-requests-ku-yi/image-20200531063310548.png" alt="image-20200531063310548"></p>
+</li>
 </ul>
-<p>下面这个图展示了工作区、版本库中的暂存区和版本库之间的关系：</p>
-<p><img src="https://www.runoob.com/wp-content/uploads/2015/02/1352126739_7909.jpg" alt="img"></p>
-<hr>
-<p><img src="/2018/05/21/git-ji-chu-shi-yong/4.png" alt></p>
-<p><img src="/2018/05/21/git-ji-chu-shi-yong/3.png" alt></p>
-<p>例如： 图一，这个是我从GitHub上git clone 到本地的一个仓库。 .git 文件夹即版本库，红色框 即工作区；打开 .git 文件夹，如图二，有一个index文件夹即暂存区；</p>
-<hr>
-<h2 id="二-、Git-分布式版本控制系统"><a href="#二-、Git-分布式版本控制系统" class="headerlink" title="二 、Git 分布式版本控制系统"></a>二 、Git 分布式版本控制系统</h2><h3 id="1-Git-工作流程"><a href="#1-Git-工作流程" class="headerlink" title="1 . Git 工作流程"></a>1 . Git 工作流程</h3><ol>
-<li>克隆 Git 资源作为工作目录。</li>
-<li>在克隆的资源上添加或修改文件。</li>
-<li>如果其他人修改了，你可以更新资源。</li>
-<li>在提交前查看修改。</li>
-<li>提交修改。</li>
-<li>在修改完成后，如果发现错误，可以撤回提交并再次修改并提交。</li>
+<p>HEAD方法 ：当获取资源很大或者不可能一次全部爬下来，这就需要分析资源的头部信息，来判断所爬取资源的基本内容</p>
+<p>POST方法：附加的新的数据，为用户提交的数据</p>
+<p><img src="/2019/06/06/python-pa-chong-requests-ku-yi/image-20200531063915210.png" alt="image-20200531063915210"></p>
+<p><img src="/2019/06/06/python-pa-chong-requests-ku-yi/image-20200531064543057.png" alt="image-20200531064543057"></p>
+<h4 id="4-Requests库的主要解析"><a href="#4-Requests库的主要解析" class="headerlink" title="4. Requests库的主要解析"></a>4. Requests库的主要解析</h4><h5 id="1-Requests-request-method-url-kwargs"><a href="#1-Requests-request-method-url-kwargs" class="headerlink" title="1.Requests.request(method,url,**kwargs)"></a>1.Requests.request(method,url,**kwargs)</h5><p>​    method: 请求方式，对应get、post等7种</p>
+<pre class=" language-python"><code class="language-python">r <span class="token operator">=</span> Requests<span class="token punctuation">.</span>request<span class="token punctuation">(</span><span class="token string">"GET"</span><span class="token punctuation">,</span>url<span class="token punctuation">,</span><span class="token operator">**</span>kwargs<span class="token punctuation">)</span>
+r <span class="token operator">=</span> Requests<span class="token punctuation">.</span>request<span class="token punctuation">(</span><span class="token string">"HEAD"</span><span class="token punctuation">,</span>url<span class="token punctuation">,</span><span class="token operator">**</span>kwargs<span class="token punctuation">)</span>
+r <span class="token operator">=</span> Requests<span class="token punctuation">.</span>request<span class="token punctuation">(</span><span class="token string">"POST"</span><span class="token punctuation">,</span>url<span class="token punctuation">,</span><span class="token operator">**</span>kwargs<span class="token punctuation">)</span>
+r <span class="token operator">=</span> Requests<span class="token punctuation">.</span>request<span class="token punctuation">(</span><span class="token string">"PUT"</span><span class="token punctuation">,</span>url<span class="token punctuation">,</span><span class="token operator">**</span>kwargs<span class="token punctuation">)</span>
+r <span class="token operator">=</span> Requests<span class="token punctuation">.</span>request<span class="token punctuation">(</span><span class="token string">"PATCH"</span><span class="token punctuation">,</span>url<span class="token punctuation">,</span><span class="token operator">**</span>kwargs<span class="token punctuation">)</span>
+r <span class="token operator">=</span> Requests<span class="token punctuation">.</span>request<span class="token punctuation">(</span><span class="token string">"delete"</span><span class="token punctuation">,</span>url<span class="token punctuation">,</span><span class="token operator">**</span>kwargs<span class="token punctuation">)</span>
+r <span class="token operator">=</span> Requests<span class="token punctuation">.</span>request<span class="token punctuation">(</span><span class="token string">"options"</span><span class="token punctuation">,</span>url<span class="token punctuation">,</span><span class="token operator">**</span>kwargs<span class="token punctuation">)</span>
+</code></pre>
+<p>​    url：对应资源的链接</p>
+<p>​    **kwargs：对应13个可选控制访问参数</p>
+<ol>
+<li><h5 id="params-字典或者字节序列，作为参数增加到url"><a href="#params-字典或者字节序列，作为参数增加到url" class="headerlink" title="params : 字典或者字节序列，作为参数增加到url"></a>params : 字典或者字节序列，作为参数增加到url</h5></li>
 </ol>
-<p>下图展示了 Git 的工作流程：</p>
-<p><img src="https://www.runoob.com/wp-content/uploads/2015/02/git-process.png" alt="img"></p>
-<h2 id="三-，git-基础"><a href="#三-，git-基础" class="headerlink" title="三 ，git 基础"></a>三 ，git 基础</h2><h3 id="3-1-获取Git-仓库"><a href="#3-1-获取Git-仓库" class="headerlink" title="3.1 获取Git 仓库"></a>3.1 获取Git 仓库</h3><p>通常有两种获取 Git 项目仓库的方式：</p>
-<p>​            <span style="color:green">1 . 将尚未进行版本控制的本地目录转换为 Git 仓库；</span></p>
-<p>​            <span style="color:green">2 . 从其它服务器 克隆 一个已存在的 Git 仓库。</span></p>
-<hr>
-<p><strong>对已有项目进行初始化仓库，进行版本控制：</strong></p>
-<p>​            如果你有 一个本地项目，想进行版本控制，首先进入项目的根目录，鼠标右击 git bash Hear，执行以下命令 ; 这会在根目录生成一个 <strong>.git</strong> 文件夹</p>
-<pre class=" language-bash"><code class="language-bash">$ <span class="token function">git</span> init</code></pre>
-<p><img src="/2018/05/21/git-ji-chu-shi-yong/8.png" alt></p>
-<p>如上图，这个项目文件夹中存在3个模块，如data1，data2，data3，你本人对data1进行修改，则可以使用add命令，把data1 放入暂存区，在进行commit 之前，对data1 的所有操作，都会被记录下来。</p>
-<pre class=" language-bash"><code class="language-bash">$ <span class="token function">git</span> add data1    <span class="token comment" spellcheck="true">## 把data1 放入暂存区</span>
-$ <span class="token function">git</span> add *        <span class="token comment" spellcheck="true">## 把所有文件,即data1,data2,data3 全部放入暂存区</span>
-$ <span class="token function">git</span> add data4/   <span class="token comment" spellcheck="true">## 把data4文件夹所有文件放入暂存区</span></code></pre>
-<hr>
-<h5 id="从其它服务器-克隆-一个已存在的-Git-仓库"><a href="#从其它服务器-克隆-一个已存在的-Git-仓库" class="headerlink" title="从其它服务器 克隆 一个已存在的 Git 仓库"></a><strong>从其它服务器 克隆 一个已存在的 Git 仓库</strong></h5><p>如果你想获得一份已经存在了的 Git 仓库的拷贝，比如说，你想为某个开源项目贡献自己的一份力，这时就要用到 <code>git clone</code> 命令。如图 我想要得到下图仓库的本地副本，</p>
-<pre class=" language-bash"><code class="language-bash">$ <span class="token function">git</span> clone https://github.com/malibao123/spider.git  <span class="token comment" spellcheck="true">## 使用htts 协议</span>
-$ <span class="token function">git</span> git@github.com:malibao123/spider.git            <span class="token comment" spellcheck="true">## 使用git 协议</span></code></pre>
-<h3 id="3-2-记录每次更新到仓库"><a href="#3-2-记录每次更新到仓库" class="headerlink" title="3.2 记录每次更新到仓库"></a>3.2 记录每次更新到仓库</h3><p>3.2.1 文件分为两种状态，<strong>以追踪 *<em>和 *</em>未追踪</strong>；对以追踪的文件所有修改操作都会记录在版本库中，可以随时查看。</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> status <span class="token comment" spellcheck="true">## 检查文件状态</span>
+<p><img src="/2019/06/06/python-pa-chong-requests-ku-yi/image-20200531071139860.png" alt="image-20200531071139860"></p>
+<h5 id="2-data-字典，字节序列或文件对象，作为Request的内容"><a href="#2-data-字典，字节序列或文件对象，作为Request的内容" class="headerlink" title="2. data: 字典，字节序列或文件对象，作为Request的内容"></a>2. data: 字典，字节序列或文件对象，作为Request的内容</h5><p><img src="/2019/06/06/python-pa-chong-requests-ku-yi/image-20200531071644940.png" alt="image-20200531071644940"></p>
+<h5 id="3-json-JSON格式的数据，作为Request的内容"><a href="#3-json-JSON格式的数据，作为Request的内容" class="headerlink" title="3.json: JSON格式的数据，作为Request的内容"></a>3.json: JSON格式的数据，作为Request的内容</h5><p><img src="/2019/06/06/python-pa-chong-requests-ku-yi/image-20200531071737435.png" alt="image-20200531071737435"></p>
+<h5 id="4-headers-字典，HTTP定制头"><a href="#4-headers-字典，HTTP定制头" class="headerlink" title="4.headers : 字典，HTTP定制头"></a>4.headers : 字典，HTTP定制头</h5><p><img src="/2019/06/06/python-pa-chong-requests-ku-yi/image-20200531071814922.png" alt="image-20200531071814922"></p>
+<h5 id="5-auth：-元组，支持HTTP认证功能"><a href="#5-auth：-元组，支持HTTP认证功能" class="headerlink" title="5.auth： 元组，支持HTTP认证功能"></a>5.auth： 元组，支持HTTP认证功能</h5><h5 id="6-files：字典类型，传输文件"><a href="#6-files：字典类型，传输文件" class="headerlink" title="6.files：字典类型，传输文件"></a>6.files：字典类型，传输文件</h5><p><img src="/2019/06/06/python-pa-chong-requests-ku-yi/image-20200531071938032.png" alt="image-20200531071938032"></p>
+<h5 id="7-timeout：设定超时时间，秒为单位"><a href="#7-timeout：设定超时时间，秒为单位" class="headerlink" title="7.timeout：设定超时时间，秒为单位"></a>7.timeout：设定超时时间，秒为单位</h5><p><img src="/2019/06/06/python-pa-chong-requests-ku-yi/image-20200531072013296.png" alt="image-20200531072013296"></p>
+<h5 id="8-proxies：字典类型，设定访问代理服务器，可以增加登录认证"><a href="#8-proxies：字典类型，设定访问代理服务器，可以增加登录认证" class="headerlink" title="8.proxies：字典类型，设定访问代理服务器，可以增加登录认证"></a>8.proxies：字典类型，设定访问代理服务器，可以增加登录认证</h5><p><img src="/2019/06/06/python-pa-chong-requests-ku-yi/image-20200531072203694.png" alt="image-20200531072203694"></p>
+<h5 id="9-allow-redirects-True-False-默认为True，重定向开关"><a href="#9-allow-redirects-True-False-默认为True，重定向开关" class="headerlink" title="9.allow_redirects: True/False.默认为True，重定向开关"></a>9.allow_redirects: True/False.默认为True，重定向开关</h5><h5 id="10-stream：-True-False，默认为True，获取内容立即下载开关"><a href="#10-stream：-True-False，默认为True，获取内容立即下载开关" class="headerlink" title="10.stream： True/False，默认为True，获取内容立即下载开关"></a>10.stream： True/False，默认为True，获取内容立即下载开关</h5><h5 id="11-verify：-True-Fasle，默认为True，认证SSL证书开关"><a href="#11-verify：-True-Fasle，默认为True，认证SSL证书开关" class="headerlink" title="11.verify： True/Fasle，默认为True，认证SSL证书开关"></a>11.verify： True/Fasle，默认为True，认证SSL证书开关</h5><h5 id="12-cert：-本地SSL证书路径"><a href="#12-cert：-本地SSL证书路径" class="headerlink" title="12.cert： 本地SSL证书路径"></a>12.cert： 本地SSL证书路径</h5><h5 id="13-cookies：元组或CookieJAR，Request中的cookie"><a href="#13-cookies：元组或CookieJAR，Request中的cookie" class="headerlink" title="13.cookies：元组或CookieJAR，Request中的cookie"></a>13.cookies：元组或CookieJAR，Request中的cookie</h5><h4 id="5-网络爬虫分类"><a href="#5-网络爬虫分类" class="headerlink" title="5.网络爬虫分类"></a>5.网络爬虫分类</h4><p><img src="/2019/06/06/python-pa-chong-requests-ku-yi/image-20200531104046164.png" alt="image-20200531104046164"></p>
+<h3 id="二-网络爬虫风险与防治"><a href="#二-网络爬虫风险与防治" class="headerlink" title="二 . 网络爬虫风险与防治"></a>二 . 网络爬虫风险与防治</h3><h4 id="1-网络爬虫带来的问题"><a href="#1-网络爬虫带来的问题" class="headerlink" title="1.网络爬虫带来的问题"></a>1.网络爬虫带来的问题</h4><ol>
+<li>性能骚扰 :  使目的服务器产生巨大开销，降低服务器性能</li>
+<li>法律风险:   服务器上数据归属权问题</li>
+<li>隐私泄露：爬虫可以突破简单的访问控制，获取被保护的数据隐私</li>
+</ol>
+<h4 id="2-对网络爬虫的限制"><a href="#2-对网络爬虫的限制" class="headerlink" title="2.对网络爬虫的限制"></a>2.对网络爬虫的限制</h4><ol>
+<li>来源审查： 对HTTP协议中 User-Agent 进行判别，只接受网络友好的爬虫或浏览器的访问</li>
+<li>Robots协议：告诉网络爬虫的爬取协议，要求爬虫遵守</li>
+</ol>
+<h4 id="3-Robots协议"><a href="#3-Robots协议" class="headerlink" title="3.Robots协议"></a>3.Robots协议</h4><p>​    作用：对网络爬虫爬取内容进行限制，即能爬取哪些，不能爬取哪些</p>
+<p>​    形式：网站根目录下 robots.txt</p>
+<h4 id="4-Robots协议遵守策略"><a href="#4-Robots协议遵守策略" class="headerlink" title="4.Robots协议遵守策略"></a>4.Robots协议遵守策略</h4><p><img src="/2019/06/06/python-pa-chong-requests-ku-yi/image-20200601223534641.png" alt="image-20200601223534641"></p>
+<h3 id="三，request库使用与案例"><a href="#三，request库使用与案例" class="headerlink" title="三，request库使用与案例"></a>三，request库使用与案例</h3><h5 id="1-京东爬取商品信息"><a href="#1-京东爬取商品信息" class="headerlink" title="1.京东爬取商品信息"></a>1.京东爬取商品信息</h5><pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> requests
+<span class="token keyword">def</span> <span class="token function">SpiderBook</span><span class="token punctuation">(</span>url<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">try</span><span class="token punctuation">:</span>
+        response <span class="token operator">=</span> requests<span class="token punctuation">.</span>request<span class="token punctuation">(</span><span class="token string">'GET'</span><span class="token punctuation">,</span>url<span class="token punctuation">)</span>
+        response<span class="token punctuation">.</span>raise_for_status<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">#若响应状态码不是200，则抛出异常</span>
+        response<span class="token punctuation">.</span>encoding <span class="token operator">=</span> response<span class="token punctuation">.</span>apparent_encoding
+        <span class="token keyword">print</span><span class="token punctuation">(</span>response<span class="token punctuation">.</span>request<span class="token punctuation">.</span>headers<span class="token punctuation">)</span><span class="token comment" spellcheck="true">#查看请求响应头 User-Agent</span>
+        <span class="token keyword">return</span> response<span class="token punctuation">.</span>text<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token number">1000</span><span class="token punctuation">]</span>
+    <span class="token keyword">except</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token string">"爬取异常"</span>
 
-<span class="token function">git</span> status -s  <span class="token comment" spellcheck="true">## 或者 git status --short 得到一种格式更为紧凑的输出</span>
-<span class="token comment" spellcheck="true">## 如下面例子</span>
-<span class="token comment" spellcheck="true"># 新添加的未跟踪文件前面有 ?? 标记，</span>
-<span class="token comment" spellcheck="true"># 新添加到暂存区中的文件前面有 A 标记，修改过的文件前面有 M 标记。 </span>
-<span class="token comment" spellcheck="true"># 输出中有两栏，左栏指明了暂存区的状态，右栏指明了工作区的状态。</span>
+<span class="token keyword">if</span> __name__  <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    url  <span class="token operator">=</span> <span class="token string">"https://item.jd.com/100009082466.html"</span>
+    Text <span class="token operator">=</span> SpiderBook<span class="token punctuation">(</span>url<span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>Text<span class="token punctuation">)</span></code></pre>
+<h5 id="2-亚马逊商品信息爬取"><a href="#2-亚马逊商品信息爬取" class="headerlink" title="2.亚马逊商品信息爬取"></a>2.亚马逊商品信息爬取</h5><pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> requests
 
-<span class="token comment" spellcheck="true"># 例如，下面的状态报告显示： README 文件在工作区已修改但尚未暂存，而 lib/simplegit.rb 文件已修改且已暂存。 Rakefile 文件已修，暂存后又作了修改，因此该文件的修改中# 既有已暂存的部分，又有未暂存的部分。</span>
+<span class="token keyword">def</span> <span class="token function">Spider_ameon</span><span class="token punctuation">(</span>url<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">try</span><span class="token punctuation">:</span>
+        head <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'User-Agent'</span><span class="token punctuation">:</span><span class="token string">'Mozilla/5.0'</span><span class="token punctuation">}</span>
+        response <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span>url<span class="token punctuation">,</span>headers <span class="token operator">=</span> head<span class="token punctuation">)</span>
+        response<span class="token punctuation">.</span>raise_for_status<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        response<span class="token punctuation">.</span>encoding <span class="token operator">=</span> response<span class="token punctuation">.</span>apparent_encoding
+        <span class="token keyword">print</span><span class="token punctuation">(</span>response<span class="token punctuation">.</span>text<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token number">1000</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    <span class="token keyword">except</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"爬取异常"</span><span class="token punctuation">)</span>
 
-$ <span class="token function">git</span> status -s
- M README
-MM Rakefile
-A  lib/git.rb
-M  lib/simplegit.rb
-?? LICENSE.txt</code></pre>
-<p>3.2.2 追踪新文件； 当追踪文件被修改后,需要再次使用add命令，把文件的最新修改版 放入暂存区</p>
-<pre class=" language-bash"><code class="language-bash">$ <span class="token function">git</span> add data1    <span class="token comment" spellcheck="true">## 把data1 放入暂存区</span>
-$ <span class="token function">git</span> add *        <span class="token comment" spellcheck="true">## 把所有文件,即data1,data2,data3 全部放入暂存区</span>
-$ <span class="token function">git</span> add data4/   <span class="token comment" spellcheck="true">## 把data4文件夹所有文件放入暂存区     </span></code></pre>
-<p>3.2.3 忽略文件</p>
-<p>一般我们总会有些文件无需纳入 Git 的管理，也不希望它们总出现在未跟踪文件列表。 通常都是些自动生成的文件，比如日志文件，或者编译过程中创建的临时文件等。 在这种情况下，我们可以创建一个名为 <code>.gitignore</code> 的文件，列出要忽略的文件的模式。 来看一个实际的 <code>.gitignore</code> 例子：</p>
-<pre class=" language-bash"><code class="language-bash">$ <span class="token function">cat</span> .gitignore
-*.<span class="token punctuation">[</span>oa<span class="token punctuation">]</span> <span class="token comment" spellcheck="true">#忽略所有以 .a 或者 .o 结尾的文件。</span>
-*~     <span class="token comment" spellcheck="true">#忽略所有以 ~结尾的文件</span></code></pre>
-<p>3.2.4 查看<strong>尚未暂存</strong>的文件更新了哪些部分，如没有显示 则表示没有进行修改</p>
-<pre class=" language-bash"><code class="language-bash">$ <span class="token function">git</span> <span class="token function">diff</span></code></pre>
-<p>3.2.5 比对<strong>已暂存文件</strong>与<strong>最后一次提交</strong>的文件差异</p>
-<pre class=" language-bash"><code class="language-bash">$ <span class="token function">git</span> <span class="token function">diff</span> --staged</code></pre>
-<p>3.2.6 提交更新</p>
-<pre class=" language-bash"><code class="language-bash">$ <span class="token function">git</span> commit -m 提交信息  <span class="token comment" spellcheck="true">#自定义提交信息，比如 first commit  或者second commit</span></code></pre>
-<p>3.2.7 移除文件</p>
-<pre class=" language-bash"><code class="language-bash">$ <span class="token function">git</span> <span class="token function">rm</span> -f <span class="token operator">&lt;</span>filename<span class="token operator">></span>  <span class="token comment" spellcheck="true"># 删除文件</span>
-$ <span class="token function">git</span> <span class="token function">rm</span> --cached <span class="token operator">&lt;</span>filename<span class="token operator">></span>  <span class="token comment" spellcheck="true"># 把文件以 追踪状态 变为 未追踪状态(即从暂存区删除)</span></code></pre>
-<h3 id="3-3-查看提交历史"><a href="#3-3-查看提交历史" class="headerlink" title="3.3 查看提交历史"></a>3.3 查看提交历史</h3><pre class=" language-bash"><code class="language-bash">$ <span class="token function">git</span> log  <span class="token comment" spellcheck="true">#会按时间先后顺序列出所有的提交，最近的更新排在最上面</span>
-$ <span class="token function">git</span> log -p <span class="token comment" spellcheck="true"># 会显示每次提交所引入的差异（按 补丁 的格式输出）</span>
-$ <span class="token function">git</span> log -p -2 <span class="token comment" spellcheck="true"># -2 选项来只显示最近的两次提交</span></code></pre>
-<h3 id="3-4撤消操作"><a href="#3-4撤消操作" class="headerlink" title="3.4撤消操作"></a>3.4撤消操作</h3><p>3.4.1 文件补交</p>
-<pre class=" language-bash"><code class="language-bash">$ <span class="token function">git</span> commit -m <span class="token string">'initial commit'</span>  
-$ <span class="token function">git</span> add forgotten_file
-$ <span class="token function">git</span> commit --amend
-<span class="token comment" spellcheck="true">#当你提交完数据后发现 forgotten_file 这个文件忘了提交，使用git commit --amend 进行补交</span>
-<span class="token comment" spellcheck="true"># 注意 ： 当你在修补最后的提交时，并不是通过用改进后的提交 原位替换 掉旧有提交的方式来修复的， 理解这一点非常重# 要。从效果上来说，就像是旧有的提交从未存在过一样，它并不会出现在仓库的历史中。</span></code></pre>
-<p>3.4.2 取消暂存的文件</p>
-<p>当暂存区有两个 a，b 文件，但是现在只想提交 a文件，不想提交b文件；可以把b文件从暂存区撤销掉</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> reset HEAD <span class="token operator">&lt;</span>filename<span class="token operator">></span>
-<span class="token comment" spellcheck="true">#例子：</span>
-    <span class="token function">git</span> reset HEAD b</code></pre>
-<p>3.4.3 撤消对文件的修改 (恢复到最近一次开始追踪的状态)</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> checkout -- <span class="token operator">&lt;</span>filename<span class="token operator">></span></code></pre>
-<h3 id="3-5-远程仓库的使用"><a href="#3-5-远程仓库的使用" class="headerlink" title="3.5 远程仓库的使用"></a>3.5 远程仓库的使用</h3><p>3.5.1 查看远程仓库</p>
-<pre class=" language-bash"><code class="language-bash">$ <span class="token function">git</span> remote <span class="token comment" spellcheck="true"># 列出你指定的每一个远程服务器的简写.如果你已经克隆了自己的仓库，那么至少应该能看到 origin ——这                #    是 Git 给你克隆的仓库服务器的默认名字</span>
-$ <span class="token function">git</span> remote -v <span class="token comment" spellcheck="true">#显示需要读写远程仓库使用的 Git 保存的简写与其对应的 URL</span></code></pre>
-<p>3.5.2 添加远程仓库</p>
-<pre class=" language-bash"><code class="language-bash">$ <span class="token function">git</span> remote add <span class="token operator">&lt;</span>shortname<span class="token operator">></span> <span class="token operator">&lt;</span>url<span class="token operator">></span> <span class="token comment" spellcheck="true"># shortname 自定义简称 来代替url</span></code></pre>
-<p>3.5.3 从远程仓库中抓取与拉取</p>
-<pre class=" language-bash"><code class="language-bash">$ <span class="token function">git</span> fetch <span class="token operator">&lt;</span>remote<span class="token operator">></span> <span class="token comment" spellcheck="true">#只会将数据下载到你的本地仓库——它并不会自动合并或修改你当前的工作。</span>
-<span class="token comment" spellcheck="true">#如果你的当前分支设置了跟踪远程分支，那么可以用 git pull 命令来自动抓取后合并该远程分支到当前分支。</span></code></pre>
-<p>3.5.4 推送到远程仓库</p>
-<pre class=" language-bash"><code class="language-bash">$ <span class="token function">git</span> push origin master
-<span class="token comment" spellcheck="true">#只有当你有所克隆服务器的写入权限，并且之前没有人推送过时，这条命令才能生效。 当你和其他人在同一时间克隆，他们</span>
-<span class="token comment" spellcheck="true">#先推送到上游然后你再推送到上游，你的推送就会毫无疑问地被拒绝。 你必须先抓取他们的工作 git pull 并将其合并进你的工作后才能推送。</span></code></pre>
-<p>3.5.5 查看某个远程仓库</p>
-<pre class=" language-bash"><code class="language-bash">$ <span class="token function">git</span> remote show  <span class="token comment" spellcheck="true"># 查看所有远程仓库</span>
-$ <span class="token function">git</span> remote show <span class="token operator">&lt;</span>remote<span class="token operator">></span> <span class="token comment" spellcheck="true"># 列出该远程仓库的 URL 与跟踪分支的信息</span>
-$ <span class="token function">git</span> remote show  <span class="token comment" spellcheck="true"># 查看所有远程仓库</span>
-$ <span class="token function">git</span> remote show <span class="token operator">&lt;</span>remote<span class="token operator">></span> <span class="token comment" spellcheck="true"># 列出该远程仓库的 URL 与跟踪分支的信息</span></code></pre>
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    url <span class="token operator">=</span> <span class="token string">'[自己找一个商品链接]'</span>
+    Spider_ameon<span class="token punctuation">(</span>url2<span class="token punctuation">)</span></code></pre>
+<p>说明: 如果频繁对亚马逊商品信息进行爬取，可能导入出现异常，更换User-Agent 不足以解决这个问题</p>
+<h5 id="3-获取搜索引擎关键字提交接口（使用可控形参params）"><a href="#3-获取搜索引擎关键字提交接口（使用可控形参params）" class="headerlink" title="3.获取搜索引擎关键字提交接口（使用可控形参params）"></a>3.获取搜索引擎关键字提交接口（使用可控形参params）</h5><pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> requests
+
+<span class="token keyword">def</span> <span class="token function">demo2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">try</span><span class="token punctuation">:</span>
+        <span class="token comment" spellcheck="true">#url = "http://www.so.com/s" + keyword 或者进行 url字符串拼接</span>
+        head <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'User-Agent'</span><span class="token punctuation">:</span><span class="token string">'Mozilla/5.0'</span><span class="token punctuation">}</span>
+        kv <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'q'</span><span class="token punctuation">:</span> <span class="token string">'Python'</span><span class="token punctuation">}</span>
+          <span class="token comment" spellcheck="true"># 这里使用的时360引擎搜索</span>
+        re <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">"http://www.so.com/s"</span><span class="token punctuation">,</span>params<span class="token operator">=</span>kv<span class="token punctuation">,</span>headers<span class="token operator">=</span>head<span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>request<span class="token punctuation">.</span>headers<span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>status_code<span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>text<span class="token punctuation">)</span>
+    <span class="token keyword">except</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'爬取异常'</span><span class="token punctuation">)</span>
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    demo2<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+<p>注意：调用其他的一些搜索引擎关键字接口，需要进行图形验证，例如百度</p>
 
             </div>
             <hr/>
@@ -604,7 +623,7 @@ $ <span class="token function">git</span> remote show <span class="token operato
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://malibao123.github.io/2018/05/21/git-ji-chu-shi-yong/">http://malibao123.github.io/2018/05/21/git-ji-chu-shi-yong/</a>
+                    <a href="http://malibao123.github.io/2019/06/06/python-pa-chong-requests-ku-yi/">http://malibao123.github.io/2019/06/06/python-pa-chong-requests-ku-yi/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -642,8 +661,8 @@ $ <span class="token function">git</span> remote show <span class="token operato
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Git%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/">
-                                    <span class="chip bg-color">Git工具使用</span>
+                                <a href="/tags/%E7%88%AC%E8%99%AB-requests/">
+                                    <span class="chip bg-color">爬虫 requests</span>
                                 </a>
                             
                         </div>
@@ -815,35 +834,30 @@ $ <span class="token function">git</span> remote show <span class="token operato
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/06/06/python-pa-chong-requests-ku-yi/">
+                <a href="/2019/06/08/python-pa-chong-requests-ku-er/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="Python爬虫-requests库(一)">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="Python爬虫-requests库(二)">
                         
-                        <span class="card-title">Python爬虫-requests库(一)</span>
+                        <span class="card-title">Python爬虫-requests库(二)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Python爬虫(一)一. HTTP、Request 基本知识1.Resspnse对象的基本属性response = Request.get()
-Respose对象的属性
+                            
+BeautifulSoup 解析HTML库
 
-
-
-属性
-说明
-
-
-
-response.status_code
-H
+1.常见解析库  
+2.BeautifulSoup 类的基本元素  
+  Comment：如果BuatuifulSoup提取到注释内容，会自动识别为Comment类型，而非string类型
+3
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2019-06-06
+                            <i class="far fa-clock fa-fw icon-date"></i>2019-06-08
                         </span>
                         <span class="publish-author">
                             
@@ -856,8 +870,8 @@ H
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E7%88%AC%E8%99%AB-requests/">
-                        <span class="chip bg-color">爬虫 requests</span>
+                    <a href="/tags/python%E7%88%AC%E8%99%AB-requests/">
+                        <span class="chip bg-color">python爬虫 requests</span>
                     </a>
                     
                 </div>
@@ -868,7 +882,7 @@ H
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
                 <a href="/2018/05/21/git-ji-chu-shi-yong/">
@@ -899,7 +913,6 @@ H
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
